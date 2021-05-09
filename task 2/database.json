@@ -1,0 +1,36 @@
+[
+    {
+        "id": 1,
+        "shape": "square",
+        "dimensions": {
+            "a": 5,
+            "b": 5
+        },
+        "area": 25
+    },
+    {
+        "id": 2,
+        "shape": "rectangle",
+        "dimensions": {
+            "a": 5,
+            "b": 8
+        },
+        "area": 40
+    },
+    {
+        "id": 3,
+        "shape": "triangle",
+        "dimensions": {
+            "a": 5,
+            "b": 8,
+            "c": 4
+        },
+        "area": 8.18
+    },
+    {
+        "id": 4,
+        "shape": "circle",
+        "dimensions": 12,
+        "area": 452.39
+    }
+]
