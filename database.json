@@ -154,5 +154,11 @@
             "b": 7
         },
         "area": 35
+    },
+    {
+        "id": 26,
+        "shape": "square",
+        "dimensions": 16,
+        "area": 256
     }
 ]

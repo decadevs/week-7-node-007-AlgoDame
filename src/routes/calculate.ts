@@ -123,7 +123,6 @@ router.post('/', function (req: Request, res: Response, next: NextFunction) {
         console.log(err);
         return;
       }
-      console.log("the data===> ", data)
       database = JSON.parse(data);
       const newPost = generateID(database, newCalculation)
       if (newPost) {
@@ -182,9 +181,6 @@ function generateID(database: dbBody[], newCal: dbBody) {
     }
   }
 }
-
-
-
 
 function writeToDatabase(path: string, content: dbBody[]) {
   fs.writeFile(path, JSON.stringify(content, null, 4), err => {

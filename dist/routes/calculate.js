@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable @typescript-eslint/no-var-requires */
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -113,7 +115,6 @@ router.post('/', function (req, res, next) {
                 console.log(err);
                 return;
             }
-            console.log("the data===> ", data);
             database = JSON.parse(data);
             const newPost = generateID(database, newCalculation);
             if (newPost) {
