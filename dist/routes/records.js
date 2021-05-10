@@ -14,7 +14,7 @@ router.get("/", function (req, res, next) {
             console.log(err);
             return;
         }
-        let db = JSON.parse(data);
+        const db = JSON.parse(data);
         return res.status(200).json({ status: "Successful", message: db });
     });
 });

@@ -3,12 +3,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+/* eslint-disable @typescript-eslint/no-unused-vars */
 const express_1 = require("express");
 const path_1 = __importDefault(require("path"));
 const fs_1 = __importDefault(require("fs"));
 const router = express_1.Router();
 const databasePath = path_1.default.join(__dirname, "../", "../", "database.json");
-let database;
+let database = [];
 /* POST Calculations. */
 router.post('/', function (req, res, next) {
     if (!req.body.shape || !req.body.dimension) {
@@ -19,24 +20,15 @@ router.post('/', function (req, res, next) {
     }
     /* Calculate square area. */
     if (req.body.shape.toLowerCase() === "square") {
-        if (typeof req.body.dimension !== "object") {
-            return res.status(400).json({ status: "Error", message: "Dimension must be of type object" });
+        if (typeof req.body.dimension !== "number") {
+            return res.status(400).json({ status: "Error", message: "Side must be a number" });
         }
-        let parameters = req.body.dimension;
-        let numParams = Object.keys(parameters).length;
-        if (numParams !== 2) {
-            return res.status(400).json({ status: "Error", message: "Please provide 2 dimensions" });
-        }
-        if (numParams === 2 && (typeof parameters.a !== "number" || typeof parameters.b !== "number")) {
-            return res.status(400).json({ status: "Error", message: "Dimensions must be numbers" });
-        }
+        const side = req.body.dimension;
         const shape = req.body.shape;
-        const a = parameters.a;
-        const b = parameters.b;
-        const area = a * b;
-        let newCalculation = {
+        const area = side * side;
+        const newCalculation = {
             shape: shape,
-            dimensions: { a: a, b: b },
+            dimensions: side,
             area: area
         };
         fs_1.default.readFile(databasePath, "utf-8", (err, data) => {
@@ -58,8 +50,8 @@ router.post('/', function (req, res, next) {
         if (typeof req.body.dimension !== "object") {
             return res.status(400).json({ status: "Error", message: "Dimension must be of type object" });
         }
-        let parameters = req.body.dimension;
-        let numParams = Object.keys(parameters).length;
+        const parameters = req.body.dimension;
+        const numParams = Object.keys(parameters).length;
         if (numParams !== 2) {
             return res.status(400).json({ status: "Error", message: "Please provide 2 dimensions" });
         }
@@ -70,7 +62,7 @@ router.post('/', function (req, res, next) {
         const a = parameters.a;
         const b = parameters.b;
         const area = a * b;
-        let newCalculation = {
+        const newCalculation = {
             shape: shape,
             dimensions: { a: a, b: b },
             area: area
@@ -94,8 +86,8 @@ router.post('/', function (req, res, next) {
         if (typeof req.body.dimension !== "object") {
             return res.status(400).json({ status: "Error", message: "Dimension must be of type object" });
         }
-        let parameters = req.body.dimension;
-        let numParams = Object.keys(parameters).length;
+        const parameters = req.body.dimension;
+        const numParams = Object.keys(parameters).length;
         if (numParams !== 3) {
             return res.status(400).json({ status: "Error", message: "Please provide 3 dimensions" });
         }
@@ -106,9 +98,12 @@ router.post('/', function (req, res, next) {
         const a = parameters.a;
         const b = parameters.b;
         const c = parameters.c;
-        let s = (a + b + c) / 2;
+        const s = (a + b + c) / 2;
         const area = parseFloat(Math.sqrt(s * (s - a) * (s - b) * (s - c)).toFixed(2));
-        let newCalculation = {
+        if (!area) {
+            return res.status(400).json({ status: "Error", message: "Triangle cannot be made" });
+        }
+        const newCalculation = {
             shape: shape,
             dimensions: { a: a, b: b, c: c },
             area: area
@@ -118,6 +113,7 @@ router.post('/', function (req, res, next) {
                 console.log(err);
                 return;
             }
+            console.log("the data===> ", data);
             database = JSON.parse(data);
             const newPost = generateID(database, newCalculation);
             if (newPost) {
@@ -135,7 +131,7 @@ router.post('/', function (req, res, next) {
         const shape = req.body.shape;
         const radius = req.body.dimension;
         const area = parseFloat((Math.PI * (radius * radius)).toFixed(2));
-        let newCalculation = {
+        const newCalculation = {
             shape: shape,
             dimensions: radius,
             area: area
@@ -160,14 +156,14 @@ router.post('/', function (req, res, next) {
 });
 function generateID(database, newCal) {
     if (database.length === 0) {
-        let calculation = { id: 1, ...newCal };
+        const calculation = { id: 1, ...newCal };
         return calculation;
     }
     else if (database.length !== 0) {
-        let lastID = database[database.length - 1].id;
+        const lastID = database[database.length - 1].id;
         if (lastID) {
-            let newID = lastID + 1;
-            let calculation = { id: newID, ...newCal };
+            const newID = lastID + 1;
+            const calculation = { id: newID, ...newCal };
             return calculation;
         }
     }

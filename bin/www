@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+/* eslint-disable no-undef */
+/* eslint-disable @typescript-eslint/no-var-requires */
 
 /**
  * Module dependencies.
@@ -25,7 +27,7 @@ const server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port, () => {
+const testServer = server.listen(port, () => {
   console.log(`Server is listening on port ${port}...`);
 });
 server.on('error', onError);
@@ -90,3 +92,5 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
+
+module.exports = testServer;

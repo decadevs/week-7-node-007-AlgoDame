@@ -10,7 +10,7 @@ router.get("/", function (req: Request, res: Response, next: NextFunction) {
             console.log(err);
             return;
         }
-        let db = JSON.parse(data);
+        const db = JSON.parse(data);
         return res.status(200).json({ status: "Successful", message: db });
     })
 })
