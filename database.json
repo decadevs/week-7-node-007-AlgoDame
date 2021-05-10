@@ -1,0 +1,164 @@
+[
+    {
+        "id": 1,
+        "shape": "square",
+        "dimensions": 5,
+        "area": 25
+    },
+    {
+        "id": 2,
+        "shape": "square",
+        "dimensions": 5,
+        "area": 25
+    },
+    {
+        "id": 3,
+        "shape": "circle",
+        "dimensions": 8,
+        "area": 201.06
+    },
+    {
+        "id": 4,
+        "shape": "square",
+        "dimensions": 5,
+        "area": 25
+    },
+    {
+        "id": 5,
+        "shape": "circle",
+        "dimensions": 8,
+        "area": 201.06
+    },
+    {
+        "id": 6,
+        "shape": "square",
+        "dimensions": 5,
+        "area": 25
+    },
+    {
+        "id": 7,
+        "shape": "circle",
+        "dimensions": 8,
+        "area": 201.06
+    },
+    {
+        "id": 8,
+        "shape": "square",
+        "dimensions": 5,
+        "area": 25
+    },
+    {
+        "id": 9,
+        "shape": "circle",
+        "dimensions": 8,
+        "area": 201.06
+    },
+    {
+        "id": 10,
+        "shape": "circle",
+        "dimensions": 15,
+        "area": 706.86
+    },
+    {
+        "id": 11,
+        "shape": "square",
+        "dimensions": 7,
+        "area": 49
+    },
+    {
+        "id": 12,
+        "shape": "square",
+        "dimensions": 5,
+        "area": 25
+    },
+    {
+        "id": 13,
+        "shape": "circle",
+        "dimensions": 8,
+        "area": 201.06
+    },
+    {
+        "id": 14,
+        "shape": "square",
+        "dimensions": 5,
+        "area": 25
+    },
+    {
+        "id": 15,
+        "shape": "circle",
+        "dimensions": 8,
+        "area": 201.06
+    },
+    {
+        "id": 16,
+        "shape": "square",
+        "dimensions": 5,
+        "area": 25
+    },
+    {
+        "id": 17,
+        "shape": "circle",
+        "dimensions": 8,
+        "area": 201.06
+    },
+    {
+        "id": 18,
+        "shape": "square",
+        "dimensions": 5,
+        "area": 25
+    },
+    {
+        "id": 19,
+        "shape": "circle",
+        "dimensions": 8,
+        "area": 201.06
+    },
+    {
+        "id": 20,
+        "shape": "square",
+        "dimensions": 5,
+        "area": 25
+    },
+    {
+        "id": 21,
+        "shape": "circle",
+        "dimensions": 8,
+        "area": 201.06
+    },
+    {
+        "id": 22,
+        "shape": "rectangle",
+        "dimensions": {
+            "a": 5,
+            "b": 7
+        },
+        "area": 35
+    },
+    {
+        "id": 23,
+        "shape": "square",
+        "dimensions": 5,
+        "area": 25
+    },
+    {
+        "id": 24,
+        "shape": "circle",
+        "dimensions": 8,
+        "area": 201.06
+    },
+    {
+        "id": 25,
+        "shape": "rectangle",
+        "dimensions": {
+            "a": 5,
+            "b": 7
+        },
+        "area": 35
+    },
+    {
+        "id": 26,
+        "shape": "square",
+        "dimensions": 16,
+        "area": 256
+    }
+]
